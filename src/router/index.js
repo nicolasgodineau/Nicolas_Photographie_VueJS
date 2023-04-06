@@ -1,25 +1,66 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+/* eslint-disable */
+import HomeView from "@/views/HomeView.vue";
+import PortfolioView from "@/views/PortfolioView.vue";
+import PortraitView from "@/views/PortraitView.vue";
+import TravelView from "@/views/LandscapeView.vue";
+import ImmobilierView from "@/views/ImmobilierView.vue";
+import MariageView from "@/views/MariageView.vue";
+import CarouselView from "@/views/CarouselView.vue";
+import ContactView from "@/views/ContactView.vue";
 
+import Test from "@/components/HelloWorld.vue";
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+    {
+        path: "/",
+        name: "home",
+        component: HomeView,
+    },
+    {
+        path: "/portfolio",
+        name: "portfolio",
+        component: PortfolioView,
+    },
+    {
+        path: "/portrait",
+        name: "portrait",
+        component: PortraitView,
+    },
+    {
+        path: "/travel",
+        name: "travel",
+        component: TravelView,
+    },
+    {
+        path: "/immobilier",
+        name: "immobilier",
+        component: ImmobilierView,
+    },
+    {
+        path: "/mariage",
+        name: "mariage",
+        component: MariageView,
+    },
+    {
+        path: "/carousel",
+        name: "carousel",
+        component: CarouselView,
+    },
+    {
+        path: "/contact",
+        name: "contact",
+        component: ContactView,
+    },
+    {
+        path: "/Test",
+        name: "Test",
+        component: Test,
+    },
+];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+    history: createWebHistory(process.env.BASE_URL),
+    routes,
+});
 
-export default router
+export default router;
