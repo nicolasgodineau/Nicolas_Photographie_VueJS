@@ -10,6 +10,7 @@
             <img
                 class="h-full w-full shadow-lg object-cover transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/50"
                 :src="photo.img"
+                :alt="photo.alt"
             />
         </div>
     </div>

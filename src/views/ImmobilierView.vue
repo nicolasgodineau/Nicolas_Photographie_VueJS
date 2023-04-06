@@ -2,7 +2,7 @@
 <template>
     <main class="max-w-screen-2xl mx-auto p-4">
         <h1 class="text-5xl uppercase p-10 mt-[4rem]">{{ titre }}</h1>
-        <GallerieView :data="photosImmobilier" />
+        <GallerieView :data="photos.photosImmobilier" />
     </main>
 </template>
 <script>
@@ -11,7 +11,7 @@ export default {
     components: {
         GallerieView,
     },
-    props: ["photosImmobilier"],
+    props: ["photos"],
     data: function () {
         return {
             titre: "Immobilier",
