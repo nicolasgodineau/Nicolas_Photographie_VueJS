@@ -10,7 +10,7 @@
                         alt=""
                 /></router-link>
                 <router-link
-                    class="nav-link bg-black shadow w-32 block border-black border-2 px-4 py-2 text-whiteTheme hover:bg-whiteTheme hover:text-black transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/50"
+                    class="w-full nav-link uppercase text-lg bg-black shadow block border-black border-2 px-4 py-2 text-whiteTheme hover:bg-whiteTheme hover:text-black transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/50"
                     to="/portrait"
                     >Portraits</router-link
                 >
@@ -23,7 +23,7 @@
                         alt=""
                 /></router-link>
                 <router-link
-                    class="nav-link bg-black shadow w-32 block border-black border-2 px-4 py-2 text-whiteTheme hover:bg-whiteTheme hover:text-black transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/50"
+                    class="w-full nav-link uppercase text-lg bg-black shadow block border-black border-2 px-4 py-2 text-whiteTheme hover:bg-whiteTheme hover:text-black transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/50"
                     to="/mariage"
                     >Mariages</router-link
                 >
@@ -36,7 +36,7 @@
                         alt=""
                 /></router-link>
                 <router-link
-                    class="nav-link bg-black shadow w-32 block border-black border-2 px-4 py-2 text-whiteTheme hover:bg-whiteTheme hover:text-black transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/50"
+                    class="w-full nav-link uppercase text-lg bg-black shadow block border-black border-2 px-4 py-2 text-whiteTheme hover:bg-whiteTheme hover:text-black transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/50"
                     to="/travel"
                     >Paysages</router-link
                 >
@@ -49,7 +49,7 @@
                         alt=""
                 /></router-link>
                 <router-link
-                    class="nav-link bg-black shadow w-32 block border-black border-2 px-4 py-2 text-whiteTheme hover:bg-whiteTheme hover:text-black transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/50"
+                    class="w-full nav-link uppercase text-lg bg-black shadow block border-black border-2 px-4 py-2 text-whiteTheme hover:bg-whiteTheme hover:text-black transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/50"
                     to="/immobilier"
                     >Immobilier</router-link
                 >
