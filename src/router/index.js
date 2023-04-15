@@ -2,16 +2,9 @@ import { createRouter, createWebHistory } from "vue-router";
 /* eslint-disable */
 import HomeView from "@/views/HomeView.vue";
 import PortfolioView from "@/views/PortfolioView.vue";
-import PortraitView from "@/views/PortraitView.vue";
-import TravelView from "@/views/LandscapeView.vue";
-import ImmobilierView from "@/views/ImmobilierView.vue";
-import MariageView from "@/views/MariageView.vue";
-import CarouselView from "@/views/CarouselView.vue";
 import ContactView from "@/views/ContactView.vue";
-import ImageView from "@/views/ImageView.vue";
-import NavigationView from "@/components/NavigationView.vue";
+import PhotosView from "@/views/PhotosView.vue";
 
-import Test from "@/components/HelloWorld.vue";
 const routes = [
     {
         path: "/",
@@ -24,46 +17,29 @@ const routes = [
         component: PortfolioView,
     },
     {
-        path: "/image",
-        name: "image",
-        component: ImageView,
-        props: true,
-    },
-    {
         path: "/portrait",
         name: "portrait",
-        component: PortraitView,
-        props: true,
+        component: PhotosView,
     },
     {
-        path: "/travel",
-        name: "travel",
-        component: TravelView,
+        path: "/landscape",
+        name: "landscape",
+        component: PhotosView,
     },
     {
         path: "/immobilier",
         name: "immobilier",
-        component: ImmobilierView,
+        component: PhotosView,
     },
     {
         path: "/mariage",
         name: "mariage",
-        component: MariageView,
-    },
-    {
-        path: "/carousel",
-        name: "carousel",
-        component: CarouselView,
+        component: PhotosView,
     },
     {
         path: "/contact",
         name: "contact",
         component: ContactView,
-    },
-    {
-        path: "/Test",
-        name: "Test",
-        component: Test,
     },
 ];
 
