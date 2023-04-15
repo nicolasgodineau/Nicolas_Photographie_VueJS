@@ -14,7 +14,7 @@ export default {
     props: ["photos"],
     data: function () {
         return {
-            titre: "portrait",
+            titre: "Portrait",
         };
     },
 };

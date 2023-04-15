@@ -1,16 +1,16 @@
 <template>
-    <Navigation />
-    <router-view
-        :photosPortrait="photosPortrait"
-        :photosMariage="photosMariage"
-        :photosPaysages="photosPaysages"
-        :photosImmobilier="photosImmobilier"
-        :photos="photos"
-    />
-    <Footer :year="currentYear" />
-</template>
+    <!-- Le v-if permet d'exclure la navigation de la route "home" -->
+    <Navigation v-if="$route.name !== 'home'" />
 
+    <router-view :photosPortrait="photosPortrait" :photosMariage="photosMariage" :photosPaysages="photosPaysages"
+        :photosImmobilier="photosImmobilier" :photos="photos" />
+
+    <!-- Le v-if permet d'exclure la navigation de la route "home" -->
+    <Footer :year="currentYear" v-if="$route.name !== 'home'" />
+</template>
 <script>
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Navigation from "@/components/NavigationView.vue";
 import Footer from "@/components/FooterView.vue";
 export default {
@@ -212,6 +212,9 @@ export default {
                 ],
             },
         };
+    },
+    mounted() {
+        AOS.init();
     },
 };
 </script>

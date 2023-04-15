@@ -8,6 +8,8 @@ import ImmobilierView from "@/views/ImmobilierView.vue";
 import MariageView from "@/views/MariageView.vue";
 import CarouselView from "@/views/CarouselView.vue";
 import ContactView from "@/views/ContactView.vue";
+import ImageView from "@/views/ImageView.vue";
+import NavigationView from "@/components/NavigationView.vue";
 
 import Test from "@/components/HelloWorld.vue";
 const routes = [
@@ -22,9 +24,16 @@ const routes = [
         component: PortfolioView,
     },
     {
+        path: "/image",
+        name: "image",
+        component: ImageView,
+        props: true,
+    },
+    {
         path: "/portrait",
         name: "portrait",
         component: PortraitView,
+        props: true,
     },
     {
         path: "/travel",
