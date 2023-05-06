@@ -1,12 +1,13 @@
 /* eslint-disable */
 <template>
-    <main class="max-w-screen-2xl mx-auto p-4">
-        <h1 class="text-5xl uppercase p-10 mt-[4rem]">{{ titre }}</h1>
+    <main class="h-full max-w-screen-2xl flex flex-col mx-auto p-4">
+        <h1 class="text-5xl uppercase p-10 mt-[4rem]" data-aos="fade" data-aos-duration="1000" data-aos-delay="500">{{ titre
+        }}</h1>
         <GallerieView :data="data" />
     </main>
 </template>
 <script>
-import GallerieView from "@/components/GallerieView.vue";
+import GallerieView from "@/views/GallerieView.vue";
 
 export default {
     components: {

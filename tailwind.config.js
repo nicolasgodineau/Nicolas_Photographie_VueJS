@@ -27,6 +27,25 @@ module.exports = {
 
                 max_sm: { max: "639px" },
                 // => @media (max-width: 639px) { ... }
+
+                max_xsm: { max: "380px" },
+                // => @media (max-width: 380px) { ... }
+
+                xsm: "380px",
+                // => @media (min-width: 380px) { ... }
+            },
+            backgroundPosition: {
+                bottom: "bottom",
+                "bottom-4": "center bottom 1rem",
+                center: "center",
+                left: "left",
+                "left-bottom": "left bottom",
+                "left-top": "left top",
+                right: "right",
+                "right-10rem": "right -10rem bottom",
+                "right-14%": "right 14% bottom",
+                top: "top",
+                "top-4": "center top 1rem",
             },
         },
     },

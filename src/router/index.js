@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import PortfolioView from "@/views/PortfolioView.vue";
 import ContactView from "@/views/ContactView.vue";
-import PhotosView from "@/views/PhotosView.vue";
+import GallerieView from "@/views/GallerieView.vue";
 
 const routes = [
     {
@@ -19,22 +19,22 @@ const routes = [
     {
         path: "/portrait",
         name: "portrait",
-        component: PhotosView,
+        component: GallerieView,
     },
     {
         path: "/landscape",
         name: "landscape",
-        component: PhotosView,
+        component: GallerieView,
     },
     {
         path: "/immobilier",
         name: "immobilier",
-        component: PhotosView,
+        component: GallerieView,
     },
     {
         path: "/mariage",
         name: "mariage",
-        component: PhotosView,
+        component: GallerieView,
     },
     {
         path: "/contact",
