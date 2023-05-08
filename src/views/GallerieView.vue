@@ -1,25 +1,21 @@
 /* eslint-disable */
 <template>
-    <main class="h-full max-w-screen-2xl flex flex-col mx-auto lg:p-10 sm:p-0">
-        <h1 class="text-5xl uppercase p-10 lg:mt-16 max_sm:mt-28" data-aos="fade" data-aos-duration="1000"
-            data-aos-delay="500">
-            {{
-                titre
-            }}</h1>
-        <FancyboxView class="flex flex-wrap justify-center gap-14 max_sm:gap-6 pb-16" :options="{
-                    Thumbs: false,
+    <main class="h-full max-w-screen-2xl flex flex-col mt-10 max_sm:mt-16">
+        <H1TitreView />
+        <FancyboxView class="flex flex-wrap justify-center gap-14 pb-16 max_sm:gap-3 max_sm:px-1  " :options="{
+            Thumbs: false,
 
-                    Toolbar: {
-                        display: {
-                            left: [],
-                            middle: ['infobar'],
-                            right: ['close'],
-                        },
-                    },
-                    contentClick: 'close',
-                    zoom: false,
-                }">
-            <div class="h-80 w-80" v-for="(image, i) in images" :key="i">
+            Toolbar: {
+                display: {
+                    left: [],
+                    middle: ['infobar'],
+                    right: ['close'],
+                },
+            },
+            contentClick: 'close',
+            zoom: false,
+        }">
+            <div class="h-80 w-80 max_sm:h-40 max_sm:w-40" v-for="(image, i) in images" :key="i">
                 <a data-fancybox="gallery" :href="require(`@/assets/img/${image.folder}/${image.name}`)" :key="i">
                     <img class="h-full w-full shadow-lg object-cover object-top transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/50"
                         :src="require(`@/assets/img/${image.folder}/Petites/${image.name}`)" :key="i">
@@ -30,9 +26,10 @@
 </template>
 <script>
 import FancyboxView from "@/components/FancyboxView.vue";
+import H1TitreView from "@/components/H1TitreView.vue";
 
 export default {
-    components: { FancyboxView, },
+    components: { FancyboxView, H1TitreView, },
     name: 'ShowPhotos',
 
 
@@ -106,6 +103,7 @@ export default {
         },
 
     },
+
 
 };
 </script>

@@ -1,4 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {
+    createRouter,
+    /* createWebHistory, */
+    createWebHashHistory,
+} from "vue-router";
 /* eslint-disable */
 import HomeView from "@/views/HomeView.vue";
 import PortfolioView from "@/views/PortfolioView.vue";
@@ -43,8 +47,13 @@ const routes = [
     },
 ];
 
+/* const router = createRouter({
+    history: createWebHistory(),
+    routes,
+}); */
+
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+    history: createWebHashHistory(),
     routes,
 });
 

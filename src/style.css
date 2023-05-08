@@ -1,21 +1,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Poiret+One&display=swap");
+
 html,
 body {
     height: 100vh;
+    background-color: rgb(245, 245, 245);
 }
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: black;
     background-color: rgb(245, 245, 245);
-    height: 100vh;
-    overflow: auto;
+    height: 100%;
 }
 .fancybox__backdrop {
     backdrop-filter: blur(10px);
     background: rgba(24, 24, 27, 0.62);
+}
+
+.active {
+    color: #074a9c;
+    text-decoration: underline;
+}
+
+.clampTitre {
+    font-size: clamp(4rem, 9vw, 6rem);
+}
+
+@media only screen and (max-width: 775px) {
+    .aos-animate {
+        -o-transition-property: none !important;
+        -moz-transition-property: none !important;
+        -ms-transition-property: none !important;
+        -webkit-transition-property: none !important;
+        transition-property: none !important;
+
+        -o-transform: none !important;
+        -moz-transform: none !important;
+        -ms-transform: none !important;
+        -webkit-transform: none !important;
+        transform: none !important;
+
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
+    }
+
+    [data-aos] {
+        pointer-events: auto !important;
+    }
+
+    html:not(.no-js) [data-aos^="fade"][data-aos^="fade"] {
+        opacity: 1 !important;
+    }
+
+    html:not(.no-js) [data-aos="fade-up"] {
+        transform: none !important;
+    }
 }

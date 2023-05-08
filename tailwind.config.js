@@ -47,6 +47,10 @@ module.exports = {
                 top: "top",
                 "top-4": "center top 1rem",
             },
+            fontFamily: {
+                titre: ["Poiret One"],
+                texte: ["Lato"],
+            },
         },
     },
     plugins: [],

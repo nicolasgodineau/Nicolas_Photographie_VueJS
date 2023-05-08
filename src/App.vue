@@ -1,7 +1,6 @@
 <template>
     <!-- Le v-if permet d'exclure la navigation de la route "home" -->
     <Navigation v-if="$route.name !== 'home'" />
-
     <router-view :photos="photos" />
 
     <!-- Le v-if permet d'exclure la navigation de la route "home" -->
@@ -24,7 +23,9 @@ export default {
         };
     },
     mounted() {
-        AOS.init();
+        AOS.init({
+            disable: "phone",
+        });
     },
 };
 </script>

@@ -8,7 +8,7 @@
                         src="@/assets/img/logo/Logo_declinaison5.svg" alt="" /></router-link>
 
             </div>
-            <div class="flex items-center justify-center gap-4">
+            <div class="flex items-center justify-center gap-4 text-xl tracking-widest font-titre font-bold">
                 <router-link class="disabled:text-black/30 [&.active]:text-black/90 dark:[&.active]:text-neutral-400 p-2"
                     aria-current="page" data-te-nav-link-ref to="/portfolio">Portfolio</router-link>
                 <router-link class=" disabled:text-black/30 [&.active]:text-black/90 dark:[&.active]:text-neutral-400 p-2"
