@@ -1,6 +1,6 @@
 /* eslint-disable */
 <template>
-    <h1 class="clampTitre font-titre uppercase p-10 max_sm:px-3" data-aos="fade" data-aos-duration="1000"
+    <h1 class="clampTitre font-titre uppercase pt-10 pb-5 max_sm:px-3" data-aos="fade" data-aos-duration="1000"
         data-aos-delay="500">
         {{
             titre

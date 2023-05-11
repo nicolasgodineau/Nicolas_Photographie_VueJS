@@ -8,6 +8,7 @@ html,
 body {
     height: 100vh;
     background-color: rgb(245, 245, 245);
+    box-sizing: border-box;
 }
 #app {
     -webkit-font-smoothing: antialiased;
@@ -17,20 +18,74 @@ body {
     background-color: rgb(245, 245, 245);
     height: 100%;
 }
+
 .fancybox__backdrop {
     backdrop-filter: blur(10px);
     background: rgba(24, 24, 27, 0.62);
 }
 
-.active {
-    color: #074a9c;
-    text-decoration: underline;
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
-.clampTitre {
-    font-size: clamp(4rem, 9vw, 6rem);
+@layer components {
+    .active {
+        color: #074a9c;
+        text-decoration: underline;
+    }
+    .clampTitre {
+        font-size: clamp(4rem, 9vw, 6rem);
+    }
+    .menuFixe {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+    .card {
+        background-color: theme("colors.white");
+        border-radius: theme("borderRadius.lg");
+        padding: theme("spacing.6");
+        box-shadow: theme("boxShadow.xl");
+    }
+    .texteClassique {
+        font-family: "Poiret One";
+        font-weight: bold;
+        font-size: 1.25rem; /* 20px */
+        line-height: 1.75rem; /* 28px */
+        letter-spacing: 0.1em;
+    }
+    .flexCol {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .flexRow {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .effectPhoto {
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+            0 4px 6px -4px rgb(0 0 0 / 0.1);
+        object-fit: cover;
+        object-position: top;
+        transition: "box-shadow";
+        transition-duration: 300ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .effectPhoto:hover {
+        --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+            0 4px 6px -4px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+            var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        --tw-shadow-color: rgb(0 0 0 / 0.5);
+        --tw-shadow: var(--tw-shadow-colored);
+    }
 }
 
+/* Permet de désactiver AOS en mobile */
 @media only screen and (max-width: 775px) {
     .aos-animate {
         -o-transition-property: none !important;

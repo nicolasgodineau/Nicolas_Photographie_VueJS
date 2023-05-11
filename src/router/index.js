@@ -4,46 +4,42 @@ import {
     createWebHashHistory,
 } from "vue-router";
 /* eslint-disable */
-import HomeView from "@/views/HomeView.vue";
-import PortfolioView from "@/views/PortfolioView.vue";
-import ContactView from "@/views/ContactView.vue";
-import GallerieView from "@/views/GallerieView.vue";
 
 const routes = [
     {
         path: "/",
         name: "home",
-        component: HomeView,
+        component: () => import("@/views/HomeView"),
     },
     {
         path: "/portfolio",
         name: "portfolio",
-        component: PortfolioView,
+        component: () => import("@/views/PortfolioView"),
     },
     {
         path: "/portrait",
         name: "portrait",
-        component: GallerieView,
+        component: () => import("@/views/GallerieView"),
     },
     {
         path: "/landscape",
         name: "landscape",
-        component: GallerieView,
+        component: () => import("@/views/GallerieView"),
     },
     {
         path: "/immobilier",
         name: "immobilier",
-        component: GallerieView,
+        component: () => import("@/views/GallerieView"),
     },
     {
         path: "/mariage",
         name: "mariage",
-        component: GallerieView,
+        component: () => import("@/views/GallerieView"),
     },
     {
         path: "/contact",
         name: "contact",
-        component: ContactView,
+        component: () => import("@/views/ContactView"),
     },
 ];
 
@@ -55,6 +51,15 @@ const routes = [
 const router = createRouter({
     history: createWebHashHistory(),
     routes,
+    scrollBehavior(to, from, savedPosition) {
+        return { x: 0, y: 0 };
+    },
+});
+
+router.afterEach((to, from) => {
+    window.scrollTo(0, 0);
 });
 
 export default router;
+
+/* Utilisation de web hash history, car problème au rechergement de la page */

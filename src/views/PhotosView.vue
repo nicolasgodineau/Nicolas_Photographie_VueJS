@@ -1,8 +1,8 @@
 /* eslint-disable */
 <template>
-    <main class="h-full max-w-screen-2xl flex flex-col mx-auto p-4">
+    <main class="h-full max-w-screen-2xl flexCol mx-auto p-4">
         <h1 class="text-5xl uppercase p-10 mt-[4rem]" data-aos="fade" data-aos-duration="1000" data-aos-delay="500">{{ titre
-        }}</h1>
+                    }}</h1>
         <GallerieView :data="data" />
     </main>
 </template>

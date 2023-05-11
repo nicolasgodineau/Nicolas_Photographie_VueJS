@@ -1,8 +1,16 @@
 /* eslint-disable */
 <template>
-    <main class="h-full max-w-screen-2xl flex flex-col mt-10 max_sm:mt-16">
+    <button class="fixed bottom-24 right-6 h-12 w-12" v-show="showScrollButton" @click="scrollToTop">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-8 h-8 border border-black fill-neutral-100 shadow backdrop-blur backdrop-saturate-0 bg-[#f5f5f58c] rounded-full">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
+        </svg>
+
+    </button>
+
+    <main class="h-full max-w-screen-2xl mx-auto mt-12 max_sm:mt-20">
         <H1TitreView />
-        <FancyboxView class="flex flex-wrap justify-center gap-14 pb-16 max_sm:gap-3 max_sm:px-1  " :options="{
+        <FancyboxView class="flexRow flex-wrap justify-center gap-14 pb-16 max_sm:gap-3 max_sm:px-1  " :options="{
             Thumbs: false,
 
             Toolbar: {
@@ -15,12 +23,12 @@
             contentClick: 'close',
             zoom: false,
         }">
-            <div class="h-80 w-80 max_sm:h-40 max_sm:w-40" v-for="(image, i) in images" :key="i">
+            <article class="h-80 w-80 max_sm:h-40 max_sm:w-40" v-for="(image, i) in images" :key="i">
                 <a data-fancybox="gallery" :href="require(`@/assets/img/${image.folder}/${image.name}`)" :key="i">
                     <img class="h-full w-full shadow-lg object-cover object-top transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/50"
                         :src="require(`@/assets/img/${image.folder}/Petites/${image.name}`)" :key="i">
                 </a>
-            </div>
+            </article>
         </FancyboxView>
     </main>
 </template>
@@ -31,20 +39,32 @@ import H1TitreView from "@/components/H1TitreView.vue";
 export default {
     components: { FancyboxView, H1TitreView, },
     name: 'ShowPhotos',
-
-
     data() {
         return {
             images: [],
-
+            showScrollButton: false
         };
     },
 
     mounted() {
         this.getImages();
+        window.addEventListener("scroll", this.handleScroll);
+    },
+
+    unmounted() {
+        window.removeEventListener("scroll", this.handleScroll);
     },
 
     methods: {
+        handleScroll() {
+            this.showScrollButton = window.scrollY > 100;
+        },
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        },
         getImages() {
             const routeName = this.$route.name;
             switch (routeName) {
@@ -58,6 +78,7 @@ export default {
                                 folder: "Voyages",
                             };
                         });
+                        images.sort(() => Math.random() - 0.5);
                         this.images = images;
                         break;
                     }
@@ -71,6 +92,7 @@ export default {
                                 folder: "Mariages",
                             };
                         });
+                        images.sort(() => Math.random() - 0.5);
                         this.images = images;
                         break;
                     }
@@ -84,6 +106,7 @@ export default {
                                 folder: "Portraits",
                             };
                         });
+                        images.sort(() => Math.random() - 0.5);
                         this.images = images;
                         break;
                     }
@@ -96,6 +119,7 @@ export default {
                             folder: "Immobilier",
                         };
                     });
+                    images.sort(() => Math.random() - 0.5);
                     this.images = images;
                     break;
                 }
@@ -103,7 +127,5 @@ export default {
         },
 
     },
-
-
 };
 </script>

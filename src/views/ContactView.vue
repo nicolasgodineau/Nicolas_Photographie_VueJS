@@ -1,14 +1,12 @@
 <template>
-    <main class="h-full max-w-screen-2xl flex flex-col items-center mt-10 max_sm:mt-16">
+    <main class="h-full max-w-screen-2xl flexCol items-center mt-12 max_sm:mt-20">
         <H1TitreView />
-        <section
-            class="max-w-5xl flex flex-col items-center justify-center gap-8 text-lg tracking-widest font-titre pb-16 ">
-            <div
-                class="flex flex-row items-center justify-center gap-8 max_sm:flex-col max_sm:w-full max_sm:gap-6 max_sm:h-auto">
+        <section class="max-w-5xl flexCol items-center justify-center gap-8 text-lg tracking-widest font-titre pb-16 ">
+            <div class="flexRow items-center justify-center gap-8 max_sm:flex-col max_sm:w-full max_sm:gap-6 max_sm:h-auto">
                 <img class="h-96 shadow-lg object-cover transition-shadow duration-300 ease-in-out shadow-black/30 max_sm:h-80"
                     src="@/assets/img/Profil.webp" alt="photo de nicolas godineau" />
                 <div
-                    class="w-[40ch] min-w-[20ch] h-96 flex flex-col justify-between text-left max_sm:w-11/12 max_sm:gap-6 max_sm:h-auto">
+                    class="w-[40ch] min-w-[20ch] h-96 flexCol justify-between text-left max_sm:w-11/12 max_sm:gap-6 max_sm:h-auto">
                     <p>Né à Bordeaux en France,</p>
                     <p>
                         j’ai passé mon enfance bercé par le bruit des
@@ -30,10 +28,10 @@
                 </div>
             </div>
             <div
-                class="w-full mt-10 flex flex-row items-center justify-center gap-8 max_sm:flex-col max_sm:w-full max_sm:gap-6 max_sm:h-auto">
+                class="w-full mt-10 flexRow items-center justify-center gap-8 max_sm:flex-col max_sm:w-full max_sm:gap-6 max_sm:h-auto">
                 <form action="https://public.herotofu.com/v1/0b4393f0-d02c-11ed-9434-5b53665d9a66" method="post"
-                    accept-charset="UTF-8" class="flex flex-col text-left w-96 flex-grow max_sm:w-11/12 ">
-                    <div class="flex flex-row gap-8 max_sm:flex-col max_sm:gap-3 max_sm:w-full">
+                    accept-charset="UTF-8" class="flexCol text-left w-96 flex-grow max_sm:w-11/12 ">
+                    <div class="flexRow gap-8 max_sm:flex-col max_sm:gap-3 max_sm:w-full">
                         <label class="block mb-6 max_sm:mb-0">
                             <span class="text-gray-700">Votre nom & prénom</span>
                             <input type="text" name="name"
@@ -60,13 +58,12 @@
                         </button>
                     </div>
                 </form>
-                <div class="flex flex-row items-center justify-evenly w-full text-xl tracking-widest font-titre ">
-                    <a class="flex flex-col items-center gap-3" href="https://www.instagram.com/nicolasg_travel/"
-                        target="_blank" rel="noopener noreferrer"><img class="h-10 w-10" src="@/assets/instagram.svg"
-                            alt="">
+                <div class="flexRow items-center justify-evenly w-full text-xl tracking-widest font-titre ">
+                    <a class="flexCol items-center gap-3" href="https://www.instagram.com/nicolasg_travel/" target="_blank"
+                        rel="noopener noreferrer"><img class="h-10 w-10" src="@/assets/instagram.svg" alt="">
                         <p>Paysages</p>
                     </a>
-                    <a class="flex flex-col items-center gap-3" href="https://www.instagram.com/nicolasg_portraits/"
+                    <a class="flexCol items-center gap-3" href="https://www.instagram.com/nicolasg_portraits/"
                         target="_blank" rel="noopener noreferrer"><img class="h-10 w-10" src="@/assets/instagram.svg"
                             alt="">
                         <p>Portraits</p>
