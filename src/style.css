@@ -9,7 +9,10 @@ body {
     height: 100vh;
     background-color: rgb(245, 245, 245);
     box-sizing: border-box;
+
+    margin: 0 auto;
 }
+
 #app {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -17,6 +20,10 @@ body {
     color: black;
     background-color: rgb(245, 245, 245);
     height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .fancybox__backdrop {
@@ -41,6 +48,11 @@ body {
         top: 0;
         left: 0;
         right: 0;
+        z-index: 10;
+    }
+    .footerFixe {
+        position: fixed;
+        bottom: 0;
         z-index: 10;
     }
     .card {
@@ -82,6 +94,10 @@ body {
             var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
         --tw-shadow-color: rgb(0 0 0 / 0.5);
         --tw-shadow: var(--tw-shadow-colored);
+    }
+    .effectBlur {
+        background-color: rgba(245, 245, 245, 0.55);
+        backdrop-filter: blur(24px) saturate(0);
     }
 }
 

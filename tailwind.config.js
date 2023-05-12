@@ -7,10 +7,12 @@ module.exports = {
                 fluid: "repeat(auto-fit, minmax(150px,1fr))",
             },
             backgroundImage: {
-                accueil: "url('../src/assets/img/index.webp')",
+                accueil: "url('../src/assets/img/Ressources/index.webp')",
             },
             colors: {
                 whiteTheme: "rgb(245, 245, 245)",
+                day: "rgb(245, 245, 245)", // Couleurs pour le mode jour (blanc)
+                night: "#000000", // Couleurs pour le mode nuit (noir)
             },
             screens: {
                 max_2xl: { max: "1535px" },
@@ -54,4 +56,5 @@ module.exports = {
         },
     },
     plugins: [],
+    darkMode: "class",
 };

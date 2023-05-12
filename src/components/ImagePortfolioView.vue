@@ -6,8 +6,7 @@
         </router-link>
         <router-link
             class="w-full nav-link uppercase texteClassique text-whiteTheme bg-black effectPhoto border-black border-2 px-4 py-2  hover:bg-whiteTheme hover:text-black "
-            data-aos="fade" data-aos-duration="1000" data-aos-delay="100" :to="route">{{ altText }}</router-link>
-        <!-- LE TITRE DE LA CATEGORIE EST L'ALT DE L'IMAGE -->
+            data-aos="fade" data-aos-duration="1000" data-aos-delay="100" :to="route">{{ titre }}</router-link>
     </article>
 </template>
   
@@ -26,6 +25,9 @@ export default {
         altText: {
             type: String,
             default: '',
+        },
+        titre: {
+            type: String,
         },
     },
 };

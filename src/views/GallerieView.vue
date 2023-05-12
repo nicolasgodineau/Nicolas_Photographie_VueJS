@@ -1,14 +1,7 @@
 /* eslint-disable */
 <template>
-    <button class="fixed bottom-24 right-6 h-12 w-12" v-show="showScrollButton" @click="scrollToTop">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="w-8 h-8 border border-black fill-neutral-100 shadow backdrop-blur backdrop-saturate-0 bg-[#f5f5f58c] rounded-full">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
-        </svg>
-
-    </button>
-
     <main class="h-full max-w-screen-2xl mx-auto mt-12 max_sm:mt-20">
+        <ScrollToTop />
         <H1TitreView />
         <FancyboxView class="flexRow flex-wrap justify-center gap-14 pb-16 max_sm:gap-3 max_sm:px-1  " :options="{
             Thumbs: false,
@@ -35,9 +28,10 @@
 <script>
 import FancyboxView from "@/components/FancyboxView.vue";
 import H1TitreView from "@/components/H1TitreView.vue";
+import ScrollToTop from "@/components/ScrollToTopView.vue";
 
 export default {
-    components: { FancyboxView, H1TitreView, },
+    components: { FancyboxView, H1TitreView, ScrollToTop },
     name: 'ShowPhotos',
     data() {
         return {
@@ -48,23 +42,15 @@ export default {
 
     mounted() {
         this.getImages();
-        window.addEventListener("scroll", this.handleScroll);
+        window.addEventListener("scroll", this.onScroll);
+
     },
 
     unmounted() {
-        window.removeEventListener("scroll", this.handleScroll);
+        window.removeEventListener("scroll", this.onScroll);
     },
 
     methods: {
-        handleScroll() {
-            this.showScrollButton = window.scrollY > 100;
-        },
-        scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        },
         getImages() {
             const routeName = this.$route.name;
             switch (routeName) {
@@ -125,6 +111,20 @@ export default {
                 }
             }
         },
+        onScroll() {
+            /* Permet que le footer soit blur quand on commence à scroller vers le bas */
+            const footer = document.querySelector('footer');
+            const scrollPosition = window.scrollY > 100;
+            console.log('scrollPosition:', scrollPosition)
+
+            if (window.innerWidth <= 639 && scrollPosition) {
+                footer.classList.add('max_sm:effectBlur');
+                footer.classList.remove('bg-neutral-100');
+            } else {
+                footer.classList.remove('max_sm:effectBlur');
+                footer.classList.add('bg-neutral-100');
+            }
+        }
 
     },
 };

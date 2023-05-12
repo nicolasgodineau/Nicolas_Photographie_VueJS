@@ -5,7 +5,7 @@
             <div class="container mx-auto flexRow items-center justify-center">
                 <router-link class="active disabled:text-black/30 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                     aria-current="page" data-te-nav-link-ref to="/portfolio"><img class="h-28"
-                        src="@/assets/img/logo/Logo_declinaison5.svg" alt="" /></router-link>
+                        src="@/assets/img/Ressources/logo/Logo_index.svg" alt="" /></router-link>
 
             </div>
             <div class="flexRow items-center justify-center gap-4 text-xl tracking-widest font-titre font-bold">
