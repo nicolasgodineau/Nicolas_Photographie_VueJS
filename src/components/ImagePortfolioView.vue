@@ -2,7 +2,7 @@
     <article class="flexCol items-center justify-center gap-8 max_sm:gap-3" data-aos="fade" data-aos-delay="0"
         data-aos-duration="1000">
         <router-link :to="route" class="nav-link grow ">
-            <img :src="image" :alt="altText" class="h-80 effectPhoto max_sm:h-64" />
+            <img :src="image" :alt="altText" class="max-h-80 effectPhoto max_sm:h-64" />
         </router-link>
         <router-link
             class="w-full nav-link uppercase texteClassique text-whiteTheme bg-black effectPhoto border-black border-2 px-4 py-2  hover:bg-whiteTheme hover:text-black "

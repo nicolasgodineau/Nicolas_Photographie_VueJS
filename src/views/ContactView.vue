@@ -62,11 +62,35 @@
 <script>
 import H1TitreView from "@/components/H1TitreView.vue";
 export default {
-    components: { H1TitreView, },
+    components: { H1TitreView },
+    mounted() {
+        window.addEventListener("scroll", this.onScroll);
+    },
+
+    unmounted() {
+        window.removeEventListener("scroll", this.onScroll);
+    },
     methods: {
         setLang(lang) {
             this.$i18n.locale = lang;
         },
+        onScroll() {
+            /* Permet que le footer soit blur quand on commence à scroller vers le bas */
+            const footer = document.querySelector('footer');
+            const nav = document.querySelector('nav');
+            const scrollPosition = window.scrollY > 30;
+            if (scrollPosition) {
+                footer.classList.add('effectBlur');
+                footer.classList.remove('bg-whiteTheme');
+                nav.classList.add('effectBlur');
+                nav.classList.remove('bg-whiteTheme');
+            } else {
+                footer.classList.remove('effectBlur');
+                footer.classList.add('bg-whiteTheme');
+                nav.classList.remove('effectBlur');
+                nav.classList.add('bg-whiteTheme');
+            }
+        }
     },
 }
 </script>

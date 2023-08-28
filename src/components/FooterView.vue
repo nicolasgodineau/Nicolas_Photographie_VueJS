@@ -1,5 +1,5 @@
 <template>
-    <footer class="footerFixe h-8 w-full text-center text-xs tracking-widest font-titre p-2 bg-neutral-100">
+    <footer class="footerFixe w-full pt-2 flexCol items-center gap-3 font-titre bg-whiteTheme">
         <P>Copyright Nicolas Godineau {{ year }}</P>
     </footer>
 </template>

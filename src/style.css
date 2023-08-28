@@ -6,11 +6,18 @@
 
 html,
 body {
-    height: 100vh;
+    height: 100svh;
     background-color: rgb(245, 245, 245);
     box-sizing: border-box;
-
     margin: 0 auto;
+}
+
+.boxShadow {
+    box-shadow: 0 20px 40px 1px rgba(0, 0, 0, 0.12),
+        inset 0 -10px 20px -5px rgba(0, 0, 0, 0.3),
+        0 150px 100px -80px rgba(0, 0, 0, 0.4),
+        inset 0 1px 4px hsla(0, 0%, 100%, 0.6),
+        inset 0 -1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 #app {
@@ -40,9 +47,7 @@ body {
         color: #074a9c;
         text-decoration: underline;
     }
-    .clampTitre {
-        font-size: clamp(4rem, 9vw, 6rem);
-    }
+
     .menuFixe {
         position: fixed;
         top: 0;
@@ -53,6 +58,8 @@ body {
     .footerFixe {
         position: fixed;
         bottom: 0;
+        left: 0;
+        right: 0;
         z-index: 10;
     }
     .card {
@@ -61,10 +68,14 @@ body {
         padding: theme("spacing.6");
         box-shadow: theme("boxShadow.xl");
     }
+    .texteTitre {
+        font-family: "Poiret One";
+        font-size: clamp(4rem, 5vw + 1rem, 6rem);
+    }
     .texteClassique {
         font-family: "Poiret One";
         font-weight: bold;
-        font-size: 1.25rem; /* 20px */
+        font-size: clamp(1rem, 5vw + 1rem, 1.25rem);
         line-height: 1.75rem; /* 28px */
         letter-spacing: 0.1em;
     }
@@ -97,7 +108,7 @@ body {
     }
     .effectBlur {
         background-color: rgba(245, 245, 245, 0.55);
-        backdrop-filter: blur(24px) saturate(0);
+        backdrop-filter: blur(20px) saturate(0);
     }
 }
 

@@ -1,6 +1,6 @@
 <template>
-    <nav class="fixed top-0 z-10 max-w-screen-2xl w-full p-2 flexCol items-center gap-3 bg-whiteTheme max_sm:effectBlur"
-        data-aos="fade-down" data-aos-duration="1300" data-aos-delay="200" :class="`bg-${themeClass}`">
+    <nav class="fixed top-0 z-10 max-w-screen-2xl w-full pt-2 flexCol items-center gap-3 bg-whiteTheme" data-aos="fade-down"
+        data-aos-duration="1300" data-aos-delay="200">
         <router-link class="nav-link" to="/"><img class="h-20 max_sm:h-14" src="@/assets/img/Ressources/logo/Logo_menu.svg"
                 alt="Logo Nicolas godineau photographie" /></router-link>
         <div class="w-1/3 flexRow gap-3 justify-between texteClassique max_sm:w-full max_sm:justify-around ">
@@ -12,12 +12,21 @@
             }}</router-link>
         </div>
         <BtnLanguage />
+
     </nav>
 </template>
 <script>
 import BtnLanguage from './BtnLanguageView.vue';
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default {
-    components: { BtnLanguage, },
-
+    components: {
+        BtnLanguage,
+    },
+    mounted() {
+        AOS.init({
+            disable: 'phone',
+        });
+    },
 };
 </script>

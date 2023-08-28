@@ -1,21 +1,23 @@
 /* eslint-disable */
 <template>
-    <main class="h-full max-w-screen-2xl mx-auto mt-12 max_sm:mt-20">
-        <ScrollToTop />
+    <main class="h-auto max-w-screen-2xl w-full mx-auto py-16 px-2 ">
         <H1TitreView />
-        <FancyboxView class="flexRow flex-wrap justify-center gap-14 pb-16 max_sm:gap-3 max_sm:px-1  " :options="{
-            Thumbs: false,
+        <FancyboxView
+            class="max-w-screen-2xl w-full flexRow flex-wrap justify-center gap-[3vw] pb-16 max_sm:gap-3 max_sm:px-1  "
+            :options="{
+                Thumbs: false,
 
-            Toolbar: {
-                display: {
-                    left: [],
-                    middle: ['infobar'],
-                    right: ['close'],
+                Toolbar: {
+                    display: {
+
+                        left: [],
+                        middle: ['infobar'],
+                        right: ['close'],
+                    },
                 },
-            },
-            contentClick: 'close',
-            zoom: false,
-        }">
+                contentClick: 'close',
+                zoom: false,
+            }">
             <article class="h-80 w-80 max_sm:h-40 max_sm:w-40" v-for="(image, i) in images" :key="i">
                 <a data-fancybox="gallery" :href="require(`@/assets/img/${image.folder}/${image.name}`)" :key="i">
                     <img class="h-full w-full shadow-lg object-cover object-top transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/50"
@@ -23,6 +25,7 @@
                 </a>
             </article>
         </FancyboxView>
+        <ScrollToTop />
     </main>
 </template>
 <script>
@@ -114,15 +117,18 @@ export default {
         onScroll() {
             /* Permet que le footer soit blur quand on commence à scroller vers le bas */
             const footer = document.querySelector('footer');
+            const nav = document.querySelector('nav');
             const scrollPosition = window.scrollY > 100;
-            console.log('scrollPosition:', scrollPosition)
-
-            if (window.innerWidth <= 639 && scrollPosition) {
-                footer.classList.add('max_sm:effectBlur');
-                footer.classList.remove('bg-neutral-100');
+            if (scrollPosition) {
+                footer.classList.add('effectBlur');
+                footer.classList.remove('bg-whiteTheme');
+                nav.classList.add('effectBlur');
+                nav.classList.remove('bg-whiteTheme');
             } else {
-                footer.classList.remove('max_sm:effectBlur');
-                footer.classList.add('bg-neutral-100');
+                footer.classList.remove('effectBlur');
+                footer.classList.add('bg-whiteTheme');
+                nav.classList.remove('effectBlur');
+                nav.classList.add('bg-whiteTheme');
             }
         }
 

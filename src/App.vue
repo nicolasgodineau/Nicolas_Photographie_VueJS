@@ -1,7 +1,7 @@
 <template>
     <!-- Le v-if permet d'exclure la navigation de la route "home" -->
     <Navigation v-if="$route.name !== 'home'" />
-    <router-view :photos="photos" />
+    <router-view />
 
     <!-- Le v-if permet d'exclure la navigation de la route "home" -->
     <Footer :year="currentYear" v-if="$route.name !== 'home'" />

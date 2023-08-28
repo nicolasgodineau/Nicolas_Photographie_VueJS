@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
-    <h1 class="clampTitre font-titre uppercase pt-20 pb-5 max_sm:px-3" data-aos="fade" data-aos-duration="1000"
-        data-aos-delay="500">
+    <h1 class="texteTitre font-titre uppercase mt-32 pb-5 max_sm:px-3 max_sm:mt-[10svh]" data-aos="fade"
+        data-aos-duration="1000" data-aos-delay="500">
         {{ titre
         }}</h1>
 </template>
